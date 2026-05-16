@@ -26,13 +26,13 @@ $STD apt-get install -y \
 msg_ok "Installed Dependencies"
 
 # ----------------------------------------------------------------------------
-# Java runtime — Kafka 4.x runs on JDK 17+; Debian 12 ships OpenJDK 17
+# Java runtime — Kafka 4.x runs on JDK 17+; Debian 13 ships OpenJDK 21
 # ----------------------------------------------------------------------------
-msg_info "Installing OpenJDK 17"
-$STD apt-get install -y openjdk-17-jre-headless
+msg_info "Installing OpenJDK 21"
+$STD apt-get install -y openjdk-21-jre-headless
 JAVA_HOME=$(dirname "$(dirname "$(readlink -f "$(command -v java)")")")
 echo "JAVA_HOME=${JAVA_HOME}" >/etc/environment
-msg_ok "Installed OpenJDK 17"
+msg_ok "Installed OpenJDK 21"
 
 # ----------------------------------------------------------------------------
 # Service user
